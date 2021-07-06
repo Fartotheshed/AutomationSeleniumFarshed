@@ -10,20 +10,19 @@ public class Main {
 		return reverse;
 	}
 	
-	public static boolean isPalindrome(String word) {
-		int i = 0;
-		int j = word.length()-1;
-		while(i<j) {
-			if(word.charAt(i)==word.charAt(j)) {
-				return true;
-			}
-			i++;
-			j--;
-		}
-		return false;
+
+	public static void swap(int x, int y) {
+		int temp;
+		temp=x;
+		x=y;
+		y=temp;
+		
+		System.out.println("x is now "+x);
+		System.out.println("y is now "+y);
 	}
 	public static void main(String[] args) {
-		System.out.println(isPalindrome("kayak"));
+		swap(10,20);
+		
 		System.out.println(Reverse("cat"));
 	}
 
