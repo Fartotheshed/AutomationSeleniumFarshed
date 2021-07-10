@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.util.BaseConfig;
 import com.util.Highlighter;
+import com.util.Screenshot;
 
 public class Login implements BaseLogin{
 
@@ -17,9 +18,11 @@ public class Login implements BaseLogin{
 		driver.navigate().to(BaseConfig.getConfig("URL"));
 		MasterPageFactory obj = new MasterPageFactory(driver);
 		Highlighter.addColor(driver, obj.getSignin());
+		Screenshot.takeShot(driver, "before sign-in");
 		obj.getSignin().click();
 		Highlighter.addColor(driver, obj.getEmail());
 		obj.getEmail().sendKeys(BaseConfig.getConfig("user"));
+		Screenshot.takeShot(driver, "after user");
 		Highlighter.addColor(driver, obj.getPassword());
 		obj.getPassword().sendKeys(BaseConfig.getConfig("password"));
 		Highlighter.addColor(driver, obj.getLoginbtn());

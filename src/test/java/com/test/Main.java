@@ -20,9 +20,14 @@ public class Main {
 		System.out.println("x is now "+x);
 		System.out.println("y is now "+y);
 	}
+	public static boolean isPalindrome(String word) {
+		String reverse = Reverse(word);
+		
+		return word.equals(reverse);
+	}
 	public static void main(String[] args) {
 		swap(10,20);
-		
+		System.out.println(isPalindrome("kayak"));
 		System.out.println(Reverse("cat"));
 	}
 
